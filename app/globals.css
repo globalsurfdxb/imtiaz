@@ -3,8 +3,8 @@
 /* ---------- Custom Font Faces ---------- */
 @font-face {
   font-family: "Optima";
-  src: url("/fonts/Optima-Regular.woff2") format("woff2"),
-       url("/fonts/Optima-Regular.woff") format("woff");
+  src: url("/fonts/OPTIMA.woff2") format("woff2"),
+       url("/fonts/OPTIMA.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,8 +12,8 @@
 
 @font-face {
   font-family: "Optima";
-  src: url("/fonts/Optima-Medium.woff2") format("woff2"),
-       url("/fonts/Optima-Medium.woff") format("woff");
+  src: url("/fonts/Optima_Medium.woff2") format("woff2"),
+       url("/fonts/Optima_Medium.woff") format("woff");
   font-weight: 550;
   font-style: normal;
   font-display: swap;
@@ -21,26 +21,35 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("/fonts/Avenir-Light.woff2") format("woff2"),
-       url("/fonts/Avenir-Light.woff") format("woff");
+  src: url("/fonts/Avenir Book.woff2") format("woff2"),
+       url("/fonts/Avenir Book.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir Light.woff2") format("woff2"),
+       url("/fonts/Avenir Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Avenir";
-  src: url("/fonts/Avenir-Regular.woff2") format("woff2"),
-       url("/fonts/Avenir-Regular.woff") format("woff");
+  src: url("/fonts/Avenir Regular.woff2") format("woff2"),
+       url("/fonts/Avenir Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+
 /* ---------- Variables ---------- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #7A253A;
 }
 
 @theme inline {
@@ -49,19 +58,48 @@
   --font-sans: "Avenir", "Optima", system-ui, sans-serif;
   --font-heading: "Optima", "Avenir", sans-serif;
   --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --breakpoint-3xl: 113.125rem;
 }
 
 /* ---------- Dark Mode ---------- */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 /* ---------- Base Styles ---------- */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+.container {
+  @apply px-[15px] mx-auto;
+
+}
+
+/* Base: light text (over dark background) */
+.light-mode .header-icon {
+  filter: brightness(0) invert(1); /* turns dark SVGs white */
+  transition: filter 0.4s ease;
+}
+
+/* Dark mode: normal dark icons */
+.dark-mode .header-icon {
+  filter: brightness(1) invert(0);
+  transition: filter 0.4s ease;
+}
+
+/* Optional: Text color for lucide icons */
+.light-mode svg {
+  color: white;
+  transition: color 0.4s ease;
+}
+
+.dark-mode svg {
+  color: black;
+  transition: color 0.4s ease;
 }

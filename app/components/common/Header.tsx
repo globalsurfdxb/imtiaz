@@ -1,46 +1,74 @@
 "use client";
-
-import { useState } from "react";
-import { Menu, User, Globe2, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import clsx from "clsx";
+import Image from "next/image";
 
 const Header: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  // Listen for theme change event from Hero
+  useEffect(() => {
+    const handler = (e: CustomEvent) => setIsDark(e.detail === "dark");
+    window.addEventListener("headerThemeChange", handler as EventListener);
+    return () =>
+      window.removeEventListener("headerThemeChange", handler as EventListener);
+  }, []);
 
   return (
-    <header className="w-full flex items-center justify-between px-4 py-2 border-b border-gray-100">
-      {/* Left: Hamburger Menu */}
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="text-gray-600 hover:text-gray-800 transition"
-        aria-label="Toggle menu"
-      >
-        <Menu size={20} />
-      </button>
-
-      {/* Center: Logo */}
-      <Link
-        href="/"
-        className="text-2xl font-semibold tracking-[0.2em] text-[#7b1b2d]"
-      >
-        IMTIAZ
-      </Link>
-
-      {/* Right: Icons */}
-      <div className="flex items-center gap-3">
-        <button
-          aria-label="User account"
-          className="text-gray-700 hover:text-gray-900 transition"
-        >
-          <User size={18} />
+    <header
+      className={clsx(
+        "w-full fixed z-50 transition-all duration-500 pt-[70px]",
+        isDark ? "dark-mode" : "light-mode"
+      )}
+    >
+      <div className="container flex items-center justify-between ">
+        {/* Left: Hamburger Menu */}
+        <div className="w-[200px]">
+        <button aria-label="Toggle menu">
+          <Image
+            src="/images/hamburger.svg"
+            className="w-[24px] header-icon"
+            alt="menu"
+            width={80}
+            height={80}
+          />
         </button>
-        <button
-          aria-label="Language selection"
-          className="flex items-center gap-1 text-gray-700 hover:text-gray-900 transition"
-        >
-          <Globe2 size={18} />
-          <ChevronDown size={16} />
-        </button>
+</div>
+        {/* Center: Logo */}
+        <Link href="/" className="block">
+          <Image
+            src="/images/logo.svg"
+            alt="imtiaz logo"
+            width={200}
+            height={100}
+            className="h-[40.5px] w-auto header-icon"
+          />
+        </Link>
+
+        {/* Right: Icons */}
+         <div className="w-[200px] flex justify-end">
+        <div className="flex items-center gap-[40px]">
+          <Image
+            src="/images/account.svg"
+            alt="account"
+            className="w-[22px] header-icon"
+            width={24}
+            height={24}
+          />
+          <div className="flex items-center gap-1">
+            <Image
+              src="/images/map.svg"
+              alt="map"
+              className="w-[16px] header-icon"
+              width={25}
+              height={25}
+            />
+            <ChevronDown size={16} className="header-icon" />
+          </div>
+        </div>
+        </div>
       </div>
     </header>
   );
