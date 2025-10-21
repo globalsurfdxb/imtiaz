@@ -51,7 +51,7 @@ ScrollTrigger.create({
 
       // Sequence
       tl.to(logoRef.current, {
-        opacity: 1,
+        opacity: 0.7,
         y: 0,
         scale: 1,
         duration: 1,
@@ -60,7 +60,7 @@ ScrollTrigger.create({
       .to(logoRef.current, {
         scale: 1.5,
         opacity: 0,
-        duration: 1.5,
+        duration: 1.3,
         ease: "power3.out",
       })
         .to(
