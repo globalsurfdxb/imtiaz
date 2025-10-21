@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           />
         </button>
 </div>
-        {/* Center: Logo */}
+        {/* Center: Lo */}
         <Link href="/" className="block">
           <Image
             src="/images/logo.svg"
