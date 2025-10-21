@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+/* ---------- Custom Font Faces ---------- */
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/Optima-Regular.woff2") format("woff2"),
+       url("/fonts/Optima-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/Optima-Medium.woff2") format("woff2"),
+       url("/fonts/Optima-Medium.woff") format("woff");
+  font-weight: 550;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir-Light.woff2") format("woff2"),
+       url("/fonts/Avenir-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir-Regular.woff2") format("woff2"),
+       url("/fonts/Avenir-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Variables ---------- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,10 +46,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "Avenir", "Optima", system-ui, sans-serif;
+  --font-heading: "Optima", "Avenir", sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
+/* ---------- Dark Mode ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +59,9 @@
   }
 }
 
+/* ---------- Base Styles ---------- */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
