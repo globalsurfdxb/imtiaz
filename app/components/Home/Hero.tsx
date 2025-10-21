@@ -60,7 +60,7 @@ ScrollTrigger.create({
       .to(logoRef.current, {
         scale: 1.5,
         opacity: 0,
-        duration: 1,
+        duration: 1.5,
         ease: "power3.out",
       })
         .to(
