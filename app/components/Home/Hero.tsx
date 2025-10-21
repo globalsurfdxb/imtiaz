@@ -116,7 +116,7 @@ ScrollTrigger.create({
         className="lgoicon absolute inset-0 flex items-center justify-center opacity-0 "
       >
         <Image
-          src="/images/logo-icon.svg"
+          src="/images/M Logo-01.png"
           alt="logo-icon"
           width={1500}
           height={1500}
