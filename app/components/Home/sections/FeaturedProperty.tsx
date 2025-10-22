@@ -107,7 +107,7 @@ const FeaturedProperty = () => {
                       />
                       </div>
                       <div className="w-[1px] bg-black/20 ml-10" />
-                      <div className="flex flex-col justify-between py-2">
+                      <div className="flex flex-col justify-between py-3">
                         <h3 className="text-primary text-[32px] font-[optima] uppercase mb-6 leading-[1]">
                           {item.name}
                         </h3>
@@ -116,11 +116,11 @@ const FeaturedProperty = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-[76px]">
+                    <div className="flex items-center gap-[76px] py-3">
                       {item.features.map((feature, idx) => (
                         <div
                           key={idx}
-                          className="flex flex-col items-center text-center"
+                          className="flex flex-col items-center text-center w-auto lg:w-[160px]"
                         >
                           <Image
                             src={feature.icon}
