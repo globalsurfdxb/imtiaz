@@ -45,7 +45,7 @@ const ConstructionProgress: React.FC = () => {
       </p>
 
       {/* Button */}
-      <button className="p-[15px] leading-[1.444444444444444] font-[avenir] font-[400] text-[18px] border border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-[169px]">
+      <button className="p-[15px] cursor-pointer leading-[1.444444444444444] font-[avenir] font-[400] text-[18px] border border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-[169px]">
         CONSTRUCTION UPDATE
       </button>
 

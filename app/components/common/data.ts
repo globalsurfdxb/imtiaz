@@ -17,7 +17,7 @@ export const footerData = {
   ],
 
   aboutImtiaz: [
-    { name: "About us", link: "#" },
+    { name: "About US", link: "#" },
     { name: "Leadership Team", link: "#" },
     { name: "Vison & Mission", link: "#" },
     { name: "Press Releases", link: "#" },

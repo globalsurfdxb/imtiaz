@@ -26,7 +26,7 @@ const ImtiazApp = () => {
                   className="bg-black rounded-[11px] h-[65px] w-[194px]"
                 >
                   <Image
-                    src="/images/home/app/apple.svg"
+                    src="/images/icons/appstore.svg"
                     alt="Download on App Store"
                     width={194}
                     height={65}
@@ -39,7 +39,7 @@ const ImtiazApp = () => {
                   className="bg-black rounded-[11px] h-[65px] w-[194px]"
                 >
                   <Image
-                    src="/images/home/app/playstore.svg"
+                    src="/images/icons/playstore.svg"
                     alt="Get it on Google Play"
                     width={194}
                     height={65}

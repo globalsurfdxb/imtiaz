@@ -30,7 +30,7 @@ const FeaturedProperty = () => {
                 el: ".custom-pagination",
                 clickable: true,
               }}
-              // autoplay={{ delay: 4000 }}
+              autoplay={{ delay: 4000 }}
               loop
               className="relative"
             >
