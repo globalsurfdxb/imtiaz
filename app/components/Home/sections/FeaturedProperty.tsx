@@ -19,7 +19,7 @@ const FeaturedProperty = () => {
           Featured Property
         </h2>
 
-        {/* ✅ Relative container for Swiper + pagination */}
+        {/* Relative container for Swiper + pagination */}
         <div className="relative w-full">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}

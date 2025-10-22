@@ -66,6 +66,13 @@ const ConstructionProgress: React.FC = () => {
             className="w-full h-auto max-h-[905px] object-cover"
           />
         </video>
+        <div
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0) 26.45%, rgba(0, 0, 0, 0.75) 86.84%)",
+          }}
+          className="absolute inset-0"
+        />
       </div>
     </section>
   );
