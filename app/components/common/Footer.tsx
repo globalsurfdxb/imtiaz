@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container pt-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[40px] underline underline-offset-[10px] decoration-1">
               ABOUT IMTIAZ
             </h3>
             <ul className="space-y-[30px] mb-[70px]">
@@ -36,7 +36,7 @@ const Footer = () => {
             </ul>
             {/* Quick Links Column */}
             <div>
-              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 POPULAR AREAS
               </h3>
               <ul className="space-y-[30px]">
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
               Help & Support
             </h3>
             <ul className="space-y-[30px] mb-[70px]">
@@ -72,7 +72,7 @@ const Footer = () => {
             </ul>
             {/* Quick Links Column */}
             <div>
-              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 Media Center
               </h3>
               <ul className="space-y-[30px]">
@@ -92,7 +92,7 @@ const Footer = () => {
 
           <div>
             <div>
-              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 Trending Searches
               </h3>
               <ul className="space-y-[30px]">
@@ -112,7 +112,7 @@ const Footer = () => {
 
           <div>
             {/* Newsletter */}
-            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
               NEWSLETTER
             </h3>
             <form onSubmit={handleNewsletterSubmit} className="mb-[30px]">
@@ -142,77 +142,55 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="flex gap-4 mb-[30px]">
-              {footerData.socialMedia.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/60 transition-colors duration-300"
-                  aria-label={social.name}
-                >
-                  <Image
-                    src={social.icon}
-                    alt={social.name}
-                    width={24}
-                    height={24}
-                    className="h-[24px] w-auto"
-                  />
-                </a>
-              ))}
-            </div>
+  {footerData.socialMedia.map((social, index) => (
+    <a
+      key={index}
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={social.name}
+      className="transition-all duration-500 hover:brightness-0 hover:invert-1 hover:sepia  "
+    >
+      <Image
+        src={social.icon}
+        alt={social.name}
+        width={24}
+        height={24}
+        className="h-[24px] w-auto"
+      />
+    </a>
+  ))}
+</div>
+
 
             {/* App Store Buttons */}
             <div className="flex gap-[25px]">
-              <a
-                href="#"
-                className="hover:opacity-60 transition-opacity duration-300 bg-black rounded-[11px] flex items-center gap-[5px] py-[9px] px-[12px]"
-                aria-label="Download on App Store"
-              >
+              <div className="flex items-center  bg-black rounded-[7px] cursor-pointer hover:translate-y-[-2px] transition-all duration-300">
                 <Image
-                  src="/images/home/app/apple.svg"
-                  alt="Download on App Store"
-                  width={22}
-                  height={22}
-                  className="h-[22px] w-auto"
+                  src="/images/icons/appstore.svg"
+                  alt="Get it on App Store"
+                  width={124}
+                  height={43}
+                  className=" w-auto"
                 />
-                <div className="flex flex-col text-white -space-y-1">
-                  <p className="text-[9px] font-[rubik] font-[500] ">
-                    Download on the
-                  </p>
-                  <p className="text-[19px] font-[rubik] font-[500]">
-                    App Store
-                  </p>
-                </div>
-              </a>
-              <a
-                href="#"
-                className="hover:opacity-60 transition-opacity duration-300 bg-black rounded-[11px] flex items-center gap-[5px] py-[9px] px-[12px]"
-                aria-label="Get it on Google Play"
-              >
+              </div>
+              <div className="flex items-center  bg-black rounded-[7px] cursor-pointer hover:translate-y-[-2px] transition-all duration-300">
                 <Image
-                  src="/images/home/app/playstore.svg"
-                  alt="Get it on Google Play"
-                  width={22}
-                  height={22}
-                  className="h-[22px] w-auto"
+                  src="/images/icons/playstore.svg"
+                  alt="Get it on App Store"
+                  width={128}
+                  height={43}
+                  className=" w-auto"
                 />
-                <div className="flex flex-col gap-0 text-white -space-y-1">
-                  <p className="text-[9px] font-[rubik] font-[500]">
-                    Get it on
-                  </p>
-                  <p className="text-[19px] font-[rubik] font-[500]">
-                    Google Play
-                  </p>
-                </div>
-              </a>
+              </div>
+               
             </div>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="mt-[40px] bg-[#893F51]">
+      <div className="mt-[55px] bg-[#893F51]">
         <div className="py-[25px]">
           <p className="text-white/75 text-[17px] font-[avenir] font-[400] leading-[1.882352941176471] text-center opacity-45">
             ©2025 Imtiaz Development. All Rights Reserved
