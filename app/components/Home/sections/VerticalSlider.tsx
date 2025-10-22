@@ -6,9 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { coastalSlides } from "../data";
+import type { Swiper as SwiperType } from "swiper";
 
 const CoastalParadise = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
     <section className="w-full bg-white py-[75px]">
@@ -19,8 +21,9 @@ const CoastalParadise = () => {
             modules={[Autoplay]}
             autoplay={{ delay: 2500 }}
             loop
-            className="flex-1" // makes Swiper fill parent height
+            onSwiper={setSwiperInstance}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            className="flex-1"
           >
             {coastalSlides.map((slide, idx) => (
               <SwiperSlide key={idx}>
@@ -72,27 +75,35 @@ const CoastalParadise = () => {
               style={{
                 top: `${activeIndex * (113 / coastalSlides.length - 1)}%`,
                 height:
-                  activeIndex == coastalSlides.length - 1 ? "105px" : "113px",
+                  activeIndex === coastalSlides.length - 1 ? "105px" : "113px",
               }}
             />
 
             <ul className="space-y-[85px] pl-[41px] py-6">
               {coastalSlides.map((slide, i) => (
-                <li key={i} className="flex items-center gap-[10px]">
+                <li
+                  key={i}
+                  className="flex items-center gap-[10px] cursor-pointer group"
+                  onClick={() => swiperInstance?.slideToLoop(i)}
+                >
                   <div className="w-[64px] h-[64px] rounded-full overflow-hidden bg-gray-100">
                     <Image
                       src={slide.thumb}
                       alt={slide.title}
                       width={64}
                       height={64}
-                      className={`object-cover w-full h-full rounded-full cursor-pointer transition-opacity duration-300 ${
-                        i === activeIndex ? "opacity-100" : "opacity-60"
+                      className={`object-cover w-full h-full rounded-full transition-opacity duration-300 ${
+                        i === activeIndex
+                          ? "opacity-100"
+                          : "opacity-60 group-hover:opacity-80"
                       }`}
                     />
                   </div>
                   <span
                     className={`text-[24px] font-[avenir] font-[400] uppercase text-black transition-opacity duration-300 ${
-                      i === activeIndex ? "opacity-100" : "opacity-60"
+                      i === activeIndex
+                        ? "opacity-100"
+                        : "opacity-60 group-hover:opacity-80"
                     }`}
                   >
                     {slide.title}
