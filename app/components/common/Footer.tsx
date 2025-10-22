@@ -18,52 +18,12 @@ const Footer = () => {
     <footer className="bg-primary text-white">
       <div className="container pt-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {/* Properties Column - Takes 2 columns */}
-          <div className="lg:col-span-2 grid grid-cols-2 gap-8">
-            {/* Column 1: First 15 items */}
-            <div>
-              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
-                PROPERTIES
-              </h3>
-              <ul className="space-y-[30px]">
-                {footerData.properties.slice(0, 15).map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.link}
-                      className="text-white/60 hover:text-white text-[17px] font-[400] font-[avenir] transition-colors duration-300 leading-[0.9411764705882353]"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 2: Remaining items */}
-            <div>
-              {/* Align second column with list, not heading */}
-              <ul className="space-y-[30px]">
-                {footerData.properties.slice(15).map((item, index) => (
-                  <li key={index + 15}>
-                    <Link
-                      href={item.link}
-                      className="text-white/60 hover:text-white text-[17px] font-[400] font-[avenir] transition-colors duration-300 leading-[0.9411764705882353]"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Communities Column */}
           <div>
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
-              COMMUNITIES
+              ABOUT IMTIAZ
             </h3>
             <ul className="space-y-[30px] mb-[70px]">
-              {footerData.communities.map((item, index) => (
+              {footerData.aboutImtiaz.map((item, index) => (
                 <li key={index}>
                   <Link
                     href={item.link}
@@ -77,10 +37,10 @@ const Footer = () => {
             {/* Quick Links Column */}
             <div>
               <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
-                QUICK LINKS
+                POPULAR AREAS
               </h3>
               <ul className="space-y-[30px]">
-                {footerData.quickLinks.map((item, index) => (
+                {footerData.popularAreas.map((item, index) => (
                   <li key={index}>
                     <Link
                       href={item.link}
@@ -95,13 +55,28 @@ const Footer = () => {
           </div>
 
           <div>
-            {/* Media Links Column */}
+            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+              Help & Support
+            </h3>
+            <ul className="space-y-[30px] mb-[70px]">
+              {footerData.helpSupport.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    href={item.link}
+                    className="text-white/60 hover:text-white text-[17px] font-[400] font-[avenir] transition-colors duration-300 leading-[0.9411764705882353]"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {/* Quick Links Column */}
             <div>
               <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
-                MEDIA LINKS
+                Media Center
               </h3>
-              <ul className="space-y-[30px] mb-[70px]">
-                {footerData.mediaLinks.map((item, index) => (
+              <ul className="space-y-[30px]">
+                {footerData.mediaCenter.map((item, index) => (
                   <li key={index}>
                     <Link
                       href={item.link}
@@ -113,22 +88,29 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            {/* Contact */}
-            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
-              CONTACT
-            </h3>
-            <div className="space-y-[30px] mb-[70px]">
-              <p className="text-white/60 text-[17px] font-[400] font-[avenir] leading-[0.9411764705882353]">
-                {footerData.contact.phone}
-              </p>
-              <p className="text-white/60 text-[17px] font-[400] font-[avenir] leading-[0.9411764705882353]">
-                {footerData.contact.email}
-              </p>
-              <p className="text-white/60 text-[17px] font-[400] font-[avenir] leading-[0.9411764705882353]">
-                {footerData.contact.address}
-              </p>
-            </div>
+          </div>
 
+          <div>
+            <div>
+              <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
+                Trending Searches
+              </h3>
+              <ul className="space-y-[30px]">
+                {footerData.trendingSearches.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.link}
+                      className="text-white/60 hover:text-white text-[17px] font-[400] font-[avenir] transition-colors duration-300 leading-[0.9411764705882353]"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div>
             {/* Newsletter */}
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[30px] underline underline-offset-[10px] decoration-1">
               NEWSLETTER
@@ -140,7 +122,7 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="ENTER EMAIL"
-                  className="w-full bg-transparent border-b border-white/40 text-white placeholder:text-white/50 text-[17px] font-[400] font-[avenir] py-2 pr-10 focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-transparent border-b border-white tracking-widest text-white placeholder:text-white/50 placeholder:text-[17px] placeholder:font-[400] placeholder:leading-[0.9411764705882353] placeholder:font-[avenir] py-2 focus:outline-none focus:border-white transition-colors"
                   required
                 />
                 <button
