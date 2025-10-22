@@ -19,8 +19,14 @@ const PressSpotlights = () => {
 
         <div className="relative flex items-center justify-center">
           {/* Prev Button */}
-          <button className="press-prev flex-shrink-0 -mt-30 z-10 w-[80px] h-[80px] bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-300 mr-[14px]">
-            <ChevronLeft size={32} />
+          <button className="press-prev flex-shrink-0 -mt-30 z-10 w-[80px] h-[80px] group cursor-pointer bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-300 mr-[14px]">
+          <Image
+                                    src="/images/icons/arrow-right.svg"
+                                    alt="arrow-right"
+                                    width={32}
+                                    height={32}
+                                    className="w-[32px] h-[32px] rotate-180   brightness-[1]  invert-[0] group-hover:invert group-hover:brightness-1 "
+                                  />
           </button>
 
           {/* Swiper */}
@@ -83,10 +89,10 @@ const PressSpotlights = () => {
 
                   {/* TEXT CONTENT */}
                   <div className="pt-[24px]">
-                    <p className="text-[17px] text-black/80 font-[400] font-[avenir] mb-[15px] leading-[110%] capitalize tracking-wide">
+                    <p className="text-[17px] text-black/80 font-[400] font-[avenir] mb-[15px] leading-[1.1] capitalize tracking-wide">
                       {item.category}
                     </p>
-                    <h3 className="text-[24px] font-[400] font-[optima] text-black uppercase leading-[120%]">
+                    <h3 className="text-[24px] font-[400] font-[optima] text-black uppercase leading-[1.2]">
                       {item.title}
                     </h3>
                   </div>
@@ -96,8 +102,14 @@ const PressSpotlights = () => {
           </Swiper>
 
           {/* Next Button */}
-          <button className="press-next -mt-30 flex-shrink-0 z-10 w-[80px] h-[80px] bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-300 ml-[14px]">
-            <ChevronRight size={32} />
+          <button className="press-next -mt-30 flex-shrink-0 z-10 w-[80px] h-[80px] group cursor-pointer bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-300 ml-[14px]">
+           <Image
+                                     src="/images/icons/arrow-right.svg"
+                                     alt="arrow-right"
+                                     width={32}
+                                     height={32}
+                                     className="w-[32px] h-[32px] brightness-[1] invert-[0]  group-hover:invert group-hover:brightness-0 "
+                                   />
           </button>
         </div>
 
@@ -106,7 +118,7 @@ const PressSpotlights = () => {
 
         {/* View All Button */}
         <div className="flex justify-center mt-[40px]">
-          <button className="p-[15px] border border-primary text-primary hover:bg-primary hover:text-white font-[400] text-[18px] font-[avenir] uppercase rounded-[169px] transition-colors duration-300">
+          <button className="p-[15px] cursor-pointer border leading-[1.444444444444444] border-primary text-primary hover:bg-primary hover:text-white font-[400] text-[18px] font-[avenir] uppercase rounded-[169px] transition-colors duration-300">
             VIEW ALL NEWS
           </button>
         </div>

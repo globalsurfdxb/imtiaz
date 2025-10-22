@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const FeaturedProperty = () => {
+  
   return (
     <section className=" bg-white overflow-hidden">
       <div className="container border-t border-black/20"></div>
@@ -30,7 +31,7 @@ const FeaturedProperty = () => {
               el: ".custom-pagination",
               clickable: true,
             }}
-            // autoplay={{ delay: 4000 }}
+            autoplay={{ delay: 4000 }}
             loop
             className="relative"
           >
