@@ -137,6 +137,7 @@ body {
   background: rgba(255, 255, 255, 1);
   transition: all 0.3s ease;
   margin: 0 !important;
+  opacity: 1 !important;
 }
 
 .custom-pagination-featured .swiper-pagination-bullet-active {
@@ -159,6 +160,7 @@ body {
   border-radius: 50px;
   transition: all 0.3s ease;
   margin: 0 !important;
+  opacity: 1 !important;
 }
 
 .press-pagination .swiper-pagination-bullet-active {
@@ -176,10 +178,11 @@ body {
 .properties-pagination .swiper-pagination-bullet {
   width: 8px;
   height: 3px;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1) !important;
   border-radius: 50px;
   transition: all 0.3s ease;
   margin: 0 !important;
+  opacity: 1 !important;
 }
 
 .properties-pagination .swiper-pagination-bullet-active {

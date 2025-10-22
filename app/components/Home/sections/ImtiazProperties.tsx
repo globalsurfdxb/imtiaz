@@ -70,7 +70,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                 prevEl: ".properties-prev",
               }}
               pagination={{
-                el: ".properties-pagination",
+                el: ".properties-pagination ",
                 clickable: true,
               }}
               autoplay={{
