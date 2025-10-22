@@ -22,45 +22,29 @@ const ImtiazApp = () => {
               <div className="flex gap-[25px]">
                 <a
                   href="#"
-                  className="hover:opacity-80 transition-opacity duration-300 bg-black rounded-[11px] border-2 border-[#FFFFFF] flex items-center gap-[5px] py-[9px] px-[12px]"
                   aria-label="Download on App Store"
+                  className="bg-black rounded-[11px] h-[65px] w-[194px]"
                 >
                   <Image
-                    src="/images/home/app/apple.svg"
+                    src="/images/icons/appstore.svg"
                     alt="Download on App Store"
-                    width={34}
-                    height={34}
-                    className="h-[34px] w-auto"
+                    width={194}
+                    height={65}
+                    className="object-contain"
                   />
-                  <div className="flex flex-col text-white -space-y-3">
-                    <p className="text-[13px] font-[rubik] font-[500] ">
-                      Download on the
-                    </p>
-                    <p className="text-[29px] font-[rubik] font-[500]">
-                      App Store
-                    </p>
-                  </div>
                 </a>
                 <a
                   href="#"
-                  className="hover:opacity-80 transition-opacity duration-300 bg-black rounded-[11px] border-2 border-[#FFFFFF] flex items-center gap-[5px] py-[9px] px-[12px]"
                   aria-label="Get it on Google Play"
+                  className="bg-black rounded-[11px] h-[65px] w-[194px]"
                 >
                   <Image
-                    src="/images/home/app/playstore.svg"
+                    src="/images/icons/playstore.svg"
                     alt="Get it on Google Play"
-                    width={34}
-                    height={34}
-                    className="h-[34px] w-auto"
+                    width={194}
+                    height={65}
+                    className="object-contain"
                   />
-                  <div className="flex flex-col gap-0 text-white -space-y-3">
-                    <p className="text-[13px] font-[rubik] font-[500]">
-                      Get it on
-                    </p>
-                    <p className="text-[29px] font-[rubik] font-[500]">
-                      Google Play
-                    </p>
-                  </div>
                 </a>
               </div>
             </div>
