@@ -96,7 +96,7 @@ ScrollTrigger.create({
     >
       {/* Background Video */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full   object-cover h-[99.9%]"
         src="/videos/WWH_for_Website_Final.mp4"
         autoPlay
         loop

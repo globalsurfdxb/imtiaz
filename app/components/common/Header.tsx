@@ -19,8 +19,8 @@ const Header: React.FC = () => {
   return (
     <header
       className={clsx(
-        "w-full fixed z-50 transition-all duration-500 pt-[70px]",
-        isDark ? "dark-mode" : "light-mode"
+        "w-full fixed z-50 transition-all duration-500 ",
+        isDark ? "dark-mode bg-white py-8  " : "light-mode pt-[70px]"
       )}
     >
       <div className="container flex items-center justify-between ">
