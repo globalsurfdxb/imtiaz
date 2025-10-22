@@ -1,7 +1,7 @@
 // components/ConstructionProgress.tsx
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 
 const ConstructionProgress: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
