@@ -1,65 +1,50 @@
 // footerData
 export const footerData = {
-  properties: [
-    { name: "Pearl House 4 by Imtiaz", link: "#" },
-    { name: "Beach Walk Grand 2 by Imtiaz", link: "#" },
-    { name: "Cove Edition 6 by Imtiaz", link: "#" },
-    { name: "Wynwood by Imtiaz", link: "#" },
-    { name: "Cove Edition 5 by Imtiaz", link: "#" },
-    { name: "Cove Grand by Imtiaz", link: "#" },
-    { name: "Sunset Bay 4 by Imtiaz", link: "#" },
-    { name: "Beach Walk 4 by Imtiaz", link: "#" },
-    { name: "Cove Boulevard by Imtiaz", link: "#" },
-    { name: "Sunset Bay 3 by Imtiaz", link: "#" },
-    { name: "Cove by Imtiaz", link: "#" },
-    { name: "Sunset Bay 2 by Imtiaz", link: "#" },
-    { name: "Pearl House III by Imtiaz", link: "#" },
-    { name: "Côtier House by Imtiaz", link: "#" },
-    { name: "Cove Edition 4 by Imtiaz", link: "#" },
-    { name: "Sunset Bay by Imtiaz", link: "#" },
-    { name: "Beach Walk Grand by Imtiaz", link: "#" },
-    { name: "Cove Edition 2 by Imtiaz", link: "#" },
-    { name: "Beach Walk III by Imtiaz", link: "#" },
-    { name: "Beach Walk Residence II by Imtiaz", link: "#" },
-    { name: "Cove Edition I by Imtiaz", link: "#" },
-    { name: "Beach Walk Residence by Imtiaz", link: "#" },
-    { name: "Côtier House 2 by Imtiaz", link: "#" },
-    { name: "Luxor by Imtiaz", link: "#" },
-    { name: "Hyde Walk by Imtiaz", link: "#" },
-    { name: "Pearl House II by Imtiaz", link: "#" },
-    { name: "Pearl House by Imtiaz", link: "#" },
-    { name: "Westwood Grande II by Imtiaz", link: "#" },
-    { name: "Westwood Grande by Imtiaz", link: "#" },
-    { name: "Westwood by Imtiaz", link: "#" },
+  trendingSearches: [
+    { name: "Properties for sale in Dubai", link: "#" },
+    { name: "Apartments for sale in Dubai", link: "#" },
+    { name: "Off plan apartments in Dubai", link: "#" },
+    { name: "Penthouses for sale in Dubai", link: "#" },
+    { name: "High ROI properties in Dubai", link: "#" },
+    { name: "Investment properties in Dubai", link: "#" },
+    { name: "Waterfront apartments in Dubai", link: "#" },
+    { name: "Properties for sale in Dubai Island", link: "#" },
+    { name: "Ready to move apartments in Dubai", link: "#" },
+    { name: "Furnished apartments for sale in Dubai", link: "#" },
+    { name: "1-bedroom apartments for sale in Dubai", link: "#" },
+    { name: "2-bedroom apartments for sale in Dubai", link: "#" },
+    { name: "3-bedroom apartments for sale in Dubai", link: "#" },
   ],
-  communities: [
-    {
-      name: "Beach Walk Residences II by Imtiaz",
-      link: "/communities/beach-walk-residences-2",
-    },
-    { name: "Cove Edition I by Imtiaz", link: "/communities/cove-edition-1" },
-    {
-      name: "Beach Walk Residences by Imtiaz",
-      link: "/communities/beach-walk-residences",
-    },
-    { name: "Glitz House 2 by Imtiaz", link: "/communities/glitz-house-2" },
-    { name: "Luxor by Imtiaz", link: "/communities/luxor" },
+
+  aboutImtiaz: [
+    { name: "About us", link: "#" },
+    { name: "Leadership Team", link: "#" },
+    { name: "Vison & Mission", link: "#" },
+    { name: "Press Releases", link: "#" },
+    { name: "Careers", link: "#" },
+    { name: "Contact Us", link: "#" },
   ],
-  quickLinks: [
-    { name: "About us", link: "/about" },
-    { name: "Projects", link: "/projects" },
-    { name: "Properties", link: "/properties" },
-    { name: "Pay now", link: "/pay-now" },
-    { name: "Careers", link: "/careers" },
-    { name: "News", link: "/news" },
-    { name: "Articles", link: "/articles" },
+
+  popularAreas: [
+    { name: "Apartments for sale in Meydan", link: "#" },
+    { name: "Apartments for sale in Dubai Island", link: "#" },
+    { name: "Apartments for sale in Dubai Land", link: "#" },
+    { name: "Apartments for sale in JVC", link: "#" },
   ],
-  mediaLinks: [
-    { name: "Press Releases", link: "/press-releases" },
-    { name: "Blog", link: "/blog" },
-    { name: "Events", link: "/events" },
-    { name: "Investor Relations", link: "/investor-relations" },
+
+  helpSupport: [
+    { name: "FAQ", link: "#" },
+    { name: "Terms & Conditions", link: "#" },
+    { name: "Privacy Policy", link: "#" },
+    { name: "Cookie Policy", link: "#" },
   ],
+
+  mediaCenter: [
+    { name: "News & Press Releases", link: "#" },
+    { name: "Blog", link: "#" },
+    { name: "Events", link: "#" },
+  ],
+
   socialMedia: [
     {
       name: "Facebook",
@@ -82,11 +67,6 @@ export const footerData = {
       link: "https://youtube.com",
     },
   ],
-  contact: {
-    phone: "+971 806 468629",
-    email: "info@imtiaz.ae",
-    address: "Suite 203, Aprel Megara Square 1, Dubai Hills, Dubai, UAE",
-  },
   appLinks: {
     appStore: "https://apps.apple.com",
     playStore: "https://play.google.com",
