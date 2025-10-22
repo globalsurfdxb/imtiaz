@@ -134,15 +134,16 @@ body {
   width: 8px;
   height: 3px;
   border-radius: 50px;
-  opacity: 1;
   background: rgba(255, 255, 255, 1);
   transition: all 0.3s ease;
   margin: 0 !important;
+  opacity: 1 !important;
 }
 
 .custom-pagination-featured .swiper-pagination-bullet-active {
   width: 40px;
 }
+
 
 /* press spotlight pagination */
 .press-pagination {
@@ -159,6 +160,7 @@ body {
   border-radius: 50px;
   transition: all 0.3s ease;
   margin: 0 !important;
+  opacity: 1 !important;
 }
 
 .press-pagination .swiper-pagination-bullet-active {
@@ -171,20 +173,18 @@ body {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-top: 24px;
 }
 
 .properties-pagination .swiper-pagination-bullet {
   width: 8px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 0;
-  opacity: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 1) !important;
+  border-radius: 50px;
   transition: all 0.3s ease;
   margin: 0 !important;
+  opacity: 1 !important;
 }
 
 .properties-pagination .swiper-pagination-bullet-active {
   width: 40px;
-  background: rgba(255, 255, 255, 1);
 }

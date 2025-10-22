@@ -70,7 +70,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                 prevEl: ".properties-prev",
               }}
               pagination={{
-                el: ".properties-pagination",
+                el: ".properties-pagination ",
                 clickable: true,
               }}
               autoplay={{
@@ -161,7 +161,7 @@ linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* <div className="properties-pagination"></div> */}
+            <div className="properties-pagination mt-[20px]"></div>
           </div>
         </div>
 

@@ -96,8 +96,8 @@ const FeaturedProperty = () => {
 
                   {/* DETAILS */}
                   <div className="flex flex-col md:flex-row justify-between items-center container w-full !px-0 mt-[32px] h-full pb-[22px] border-b border-black/20">
-                    <div className="flex items-center gap-[62px]">
-                      <div className=" px-4 lg:px-[68px]  ">
+                    <div className="flex items-stretch gap-[62px]">
+                      <div className="flex items-center px-4 lg:px-[68px]  min-h-[100%]">
                         <Image
                         src={item.logo}
                         alt="Logo"
@@ -106,7 +106,7 @@ const FeaturedProperty = () => {
                         
                       />
                       </div>
-                      <div className="w-[1px] bg-black/20 ml-10" />
+                      <div className="w-[1px] bg-black/20  " />
                       <div className="flex flex-col justify-between py-3">
                         <h3 className="text-primary text-[32px] font-[optima] uppercase mb-6 leading-[1]">
                           {item.name}
