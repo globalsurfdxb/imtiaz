@@ -8,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { pressSpotlights } from "../data";
-import { ArrowUpRight } from "lucide-react";
 
 const PressSpotlights = () => {
   return (

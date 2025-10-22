@@ -7,7 +7,6 @@ import { featuredProperties } from "../data";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const FeaturedProperty = () => {
   return (
