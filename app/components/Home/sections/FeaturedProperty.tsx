@@ -7,8 +7,18 @@ import { featuredProperties } from "../data";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useEffect, useState } from "react";
 
 const FeaturedProperty = () => {
+  const [showPagination, setShowPagination] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPagination(true);
+    }, 1000); // 2 seconds
+
+    return () => clearTimeout(timer); // cleanup on unmount
+  }, []);
+
   return (
     <section className=" bg-white overflow-hidden">
       <div className="container border-t border-black/20"></div>
@@ -159,7 +169,11 @@ const FeaturedProperty = () => {
             </Swiper>
 
             {/* ✅ Pagination positioned absolutely inside this relative container */}
-            <div className="custom-pagination custom-pagination-featured"></div>
+            <div
+              className={`custom-pagination custom-pagination-featured transition-opacity duration-500 ${
+                showPagination ? "opacity-100" : "opacity-0"
+              }`}
+            ></div>
           </div>
         </div>
       </div>
