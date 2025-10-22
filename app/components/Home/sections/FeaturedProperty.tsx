@@ -39,13 +39,15 @@ const FeaturedProperty = () => {
                   <div className="relative w-full flex flex-col items-center">
                     {/* IMAGE */}
                     <div className="relative w-full mx-auto">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        width={1920}
-                        height={860}
-                        className="rounded-none object-cover w-full h-full md:h-[650px] 2xl:h-[860px] max-w-[1920px] max-h-[860px]"
-                      />
+                      <div className="md:h-[650px] 2xl:h-[860px] max-w-[1920px] max-h-[860px]">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          width={1920}
+                          height={860}
+                          className="absolute inset-0 rounded-none object-cover w-full h-full"
+                        />
+                      </div>
                       <div
                         className="absolute inset-0 pointer-events-none"
                         style={{
