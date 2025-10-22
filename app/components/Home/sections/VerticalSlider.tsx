@@ -47,7 +47,7 @@ const CoastalParadise = () => {
         {/* RIGHT STATIC CONTENT */}
         <div className="w-full lg:w-1/2 flex flex-col justify-between">
           <div>
-            <h2 className="text-primary text-[50px] font-[optima] font-[400] mb-[32px] uppercase leading-[110%]">
+            <h2 className="text-primary text-[50px] font-[optima] font-[400] mb-[32px] uppercase leading-[1]">
               a coastal paradise
             </h2>
             <p className="text-black/80 font-[avenir] font-[300] text-[20px] mb-[15px] max-w-[75ch] leading-[110%]">
