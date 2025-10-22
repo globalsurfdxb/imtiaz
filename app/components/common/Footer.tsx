@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerData } from "./data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -13,12 +13,31 @@ const Footer = () => {
     console.log("Newsletter email:", email);
     setEmail("");
   };
+ const [isVisible, setIsVisible] = useState(false);
 
+  // Show button when page is scrolled down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 600) setIsVisible(true);
+      else setIsVisible(false);
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="bg-primary text-white">
       <div className="container pt-[60px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:flex gap-8 2xl:gap-[126px]">
+          <div className="w-fit">
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[40px] underline underline-offset-[10px] decoration-1">
               ABOUT IMTIAZ
             </h3>
@@ -54,7 +73,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="w-fit">
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
               Help & Support
             </h3>
@@ -90,7 +109,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="w-fit">
             <div>
               <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 Trending Searches
@@ -110,7 +129,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="w-fit">
             {/* Newsletter */}
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
               NEWSLETTER
@@ -122,7 +141,7 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="ENTER EMAIL"
-                  className="w-full bg-transparent border-b border-white tracking-widest text-white placeholder:text-white/50 placeholder:text-[17px] placeholder:font-[400] placeholder:leading-[0.9411764705882353] placeholder:font-[avenir] py-2 focus:outline-none focus:border-white transition-colors"
+                  className="w-full xl:w-[360px] bg-transparent border-b border-white tracking-widest text-white placeholder:text-white/50 placeholder:text-[17px] placeholder:font-[400] placeholder:leading-[0.9411764705882353] placeholder:font-[avenir] py-2 focus:outline-none focus:border-white transition-colors"
                   required
                 />
                 <button
@@ -187,8 +206,42 @@ const Footer = () => {
             </div>
           </div>
         </div>
+         
       </div>
-
+ <div className="container relative">
+  <div
+      onClick={scrollToTop}
+      className={`fixed bottom-[90px] right-10 2xl:right-15 z-[9999] flex justify-center items-center 
+      w-[74px] h-[74px] rounded-full bg-[#D9D9D936] cursor-pointer transition-all duration-500 
+      hover:bg-[#b25b73] ${isVisible ? "opacity-100 visible" : "opacity-0 invisible"}`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="24"
+        viewBox="0 0 25 24"
+        fill="none"
+        className="transition-transform duration-500 group-hover:-translate-y-1"
+      >
+        <path
+          d="M5.93359 9.57031L12.0065 3.50031L18.0793 9.57031"
+          stroke="white"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12.0059 20.5L12.0059 3.67"
+          stroke="white"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+ </div>
       {/* Copyright */}
       <div className="mt-[55px] bg-[#893F51]">
         <div className="py-[25px]">
