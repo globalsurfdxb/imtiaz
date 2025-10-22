@@ -95,7 +95,7 @@ const FeaturedProperty = () => {
                   </div>
 
                   {/* DETAILS */}
-                  <div className="flex flex-col md:flex-row justify-between items-center container w-full mt-[32px] h-full pb-[22px] border-b border-black/20">
+                  <div className="flex flex-col md:flex-row justify-between items-center container w-full !px-0 mt-[32px] h-full pb-[22px] border-b border-black/20">
                     <div className="flex items-stretch gap-[62px]">
                       <div className=" px-4 lg:px-[68px]  ">
                         <Image
@@ -129,7 +129,7 @@ const FeaturedProperty = () => {
                             height={32}
                             className="mb-[20px]"
                           />
-                          <p className="text-[17px] font-[avenir] text-black/70 text-center max-w-[110px]">
+                          <p className="text-[17px] font-[avenir] text-black/70 text-center max-w-[14ch]">
                             {feature.label}
                           </p>
                         </div>
