@@ -26,7 +26,7 @@ const FeaturedProperty = () => {
               prevEl: ".swiper-prev",
             }}
             pagination={{
-              el: ".custom-pagination",
+              el: ".custom-pagination-featured",
               clickable: true,
             }}
             autoplay={{ delay: 4000 }}
@@ -118,9 +118,7 @@ const FeaturedProperty = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* ✅ Pagination positioned absolutely inside this relative container */}
-          <div className="custom-pagination custom-pagination-featured"></div>
+          <div className="custom-pagination-featured"></div>
         </div>
       </div>
     </section>

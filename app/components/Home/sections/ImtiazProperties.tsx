@@ -161,7 +161,7 @@ linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* <div className="properties-pagination"></div> */}
+            <div className="properties-pagination mt-[20px]"></div>
           </div>
         </div>
 
