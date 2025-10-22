@@ -1,0 +1,161 @@
+"use client";
+
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { properties } from "../data";
+
+const ImtiazProperties = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
+
+  return (
+    <section className="py-[75px]">
+      <div>
+        <h1 className="text-center font-[optima] text-[45px] font-[400] text-primary uppercase leading-[110%] mb-[64px]">
+          IMTIAZ PROPERTIES
+        </h1>
+      </div>
+      <div className="relative w-full h-screen overflow-hidden">
+        <div className="absolute inset-0 transition-opacity duration-700">
+          <Image
+            src={properties[activeIndex].image}
+            alt={properties[activeIndex].name}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `
+              linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%)
+            `,
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col justify-end">
+          {/* Active Property Info */}
+          <div className="mb-10 flex justify-between items-end container">
+            <div className="flex flex-col">
+              <h2 className="font-[avenir] text-[50px] font-[400] text-white uppercase leading-[100%] mb-[30px]">
+                {properties[activeIndex].name}
+              </h2>
+              <p className="font-[avenir] text-[24px] font-[350] text-white/80 mb-[20px]">
+                {properties[activeIndex].location}
+              </p>
+            </div>
+            <div className="flex justify-center w-fit h-fit">
+              <button className="p-[15px] border border-white text-white hover:bg-white hover:text-[#7C2E2E] text-[14px] font-[avenir] uppercase tracking-wider rounded-full transition-all duration-300">
+                VIEW ALL PROPERTIES
+              </button>
+            </div>
+          </div>
+
+          {/* Thumbnails Slider */}
+          <div className="relative max-w-screen w-full bg-white/24 backdrop-blur-[33px] py-[20px]">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              onSwiper={setMainSwiper}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              navigation={{
+                nextEl: ".properties-next",
+                prevEl: ".properties-prev",
+              }}
+              pagination={{
+                el: ".properties-pagination",
+                clickable: true,
+              }}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              loop
+              slidesPerView={1.5}
+              spaceBetween={56}
+              centeredSlides={false}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2.5,
+                  spaceBetween: 56,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 56,
+                },
+                1280: {
+                  slidesPerView: 5,
+                  spaceBetween: 56,
+                },
+              }}
+              className="properties-swiper container"
+            >
+              {properties.map((property, index) => (
+                <SwiperSlide key={property.id}>
+                  <div
+                    className={`relative w-full lg:w-[311px] h-[171px] rounded-[7px] overflow-hidden ${
+                      index === activeIndex ? "border-2 border-white" : ""
+                    }`}
+                    onClick={() => {
+                      if (mainSwiper) {
+                        mainSwiper.slideToLoop(index);
+                      }
+                    }}
+                  >
+                    <Image
+                      src={property.thumbnail}
+                      alt={property.name}
+                      width={311}
+                      height={171}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
+                    <div className="absolute top-5 left-5">
+                      <span className="font-[avenir] text-[20px] font-[350] text-white leading-[110%]">
+                        {property.number}
+                      </span>
+                    </div>
+
+                    <div className="absolute top-5 right-5">
+                      <div className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center">
+                        <ArrowUpRight size={20} className="text-primary" />
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-5 left-5 right-5">
+                      <h3 className="font-[avenir] text-[20px] font-[350] text-white uppercase leading-[110%]">
+                        {property.name}
+                      </h3>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            {/* <div className="properties-pagination"></div> */}
+          </div>
+        </div>
+
+        {/* Navigation Buttons - On main background */}
+        <div className="container absolute top-[337px] inset-0 flex justify-between w-full">
+          <button className="properties-prev z-20 w-[50px] h-[50px] md:w-[70px] md:h-[70px] bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
+            <ChevronLeft size={32} />
+          </button>
+          <button className="properties-next z-20 w-[50px] h-[50px] md:w-[70px] md:h-[70px] bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
+            <ChevronRight size={32} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ImtiazProperties;

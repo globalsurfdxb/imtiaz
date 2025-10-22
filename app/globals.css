@@ -46,6 +46,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Medium.ttf") format("truetype"),
+    url("/fonts/Rubik-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* ---------- Variables ---------- */
 :root {
@@ -113,6 +122,12 @@ body {
   display: flex;
   gap: 10px;
   justify-content: center;
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: auto;
 }
 
 .custom-pagination-featured .swiper-pagination-bullet {
@@ -127,4 +142,49 @@ body {
 
 .custom-pagination-featured .swiper-pagination-bullet-active {
   width: 40px;
+}
+
+/* press spotlight pagination */
+.press-pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.press-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 3px;
+  background: rgba(124, 46, 46, 1);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.press-pagination .swiper-pagination-bullet-active {
+  width: 40px;
+
+}
+
+/* imtiaz-properties */
+.properties-pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.properties-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  opacity: 1;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.properties-pagination .swiper-pagination-bullet-active {
+  width: 40px;
+  background: rgba(255, 255, 255, 1);
 }
