@@ -100,7 +100,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
               {properties.map((property, index) => (
                 <SwiperSlide key={property.id}>
                   <div
-                    className={`relative w-full lg:w-[311px] h-[171px] rounded-[7px] overflow-hidden ${
+                    className={`relative w-full lg:w-[311px] h-[171px] rounded-[7px] overflow-hidden group${
                       index === activeIndex ? "border-2 border-white" : ""
                     }`}
                     onClick={() => {
@@ -141,9 +141,14 @@ linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
                       </span>
                     </div>
 
-                    <div className="absolute top-5 right-5">
+                    <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <div className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center">
-                        <ArrowUpRight size={20} className="text-primary" />
+                        <Image
+                          src="/icons/arrow-right-top-primary.svg"
+                          alt="arrow-up-right"
+                          width={13}
+                          height={15}
+                        />
                       </div>
                     </div>
 
