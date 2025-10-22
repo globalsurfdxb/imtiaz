@@ -26,16 +26,16 @@ const Header: React.FC = () => {
       <div className="container flex items-center justify-between ">
         {/* Left: Hamburger Menu */}
         <div className="w-[200px]">
-        <button aria-label="Toggle menu">
-          <Image
-            src="/images/hamburger.svg"
-            className="w-[24px] header-icon"
-            alt="menu"
-            width={80}
-            height={80}
-          />
-        </button>
-</div>
+          <button aria-label="Toggle menu">
+            <Image
+              src="/images/hamburger.svg"
+              className="w-[24px] header-icon"
+              alt="menu"
+              width={80}
+              height={80}
+            />
+          </button>
+        </div>
         {/* Center: Lo */}
         <Link href="/" className="block">
           <Image
@@ -48,26 +48,26 @@ const Header: React.FC = () => {
         </Link>
 
         {/* Right: Icons */}
-         <div className="w-[200px] flex justify-end">
-        <div className="flex items-center gap-[40px]">
-          <Image
-            src="/images/account.svg"
-            alt="account"
-            className="w-[22px] header-icon"
-            width={24}
-            height={24}
-          />
-          <div className="flex items-center gap-1">
+        <div className="w-[200px] flex justify-end">
+          <div className="flex items-center gap-[40px]">
             <Image
-              src="/images/map.svg"
-              alt="map"
-              className="w-[16px] header-icon"
-              width={25}
-              height={25}
+              src="/images/account.svg"
+              alt="account"
+              className="w-[22px] header-icon"
+              width={24}
+              height={24}
             />
-            <ChevronDown size={16} className="header-icon" />
+            <div className="flex items-center gap-1">
+              <Image
+                src="/images/map.svg"
+                alt="map"
+                className="w-[16px] header-icon"
+                width={25}
+                height={25}
+              />
+              <ChevronDown size={16} className="header-icon" />
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </header>

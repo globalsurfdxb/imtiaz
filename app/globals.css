@@ -4,7 +4,7 @@
 @font-face {
   font-family: "Optima";
   src: url("/fonts/OPTIMA.woff2") format("woff2"),
-       url("/fonts/OPTIMA.woff") format("woff");
+    url("/fonts/OPTIMA.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -13,7 +13,7 @@
 @font-face {
   font-family: "Optima";
   src: url("/fonts/Optima_Medium.woff2") format("woff2"),
-       url("/fonts/Optima_Medium.woff") format("woff");
+    url("/fonts/Optima_Medium.woff") format("woff");
   font-weight: 550;
   font-style: normal;
   font-display: swap;
@@ -22,23 +22,25 @@
 @font-face {
   font-family: "Avenir";
   src: url("/fonts/Avenir Book.woff2") format("woff2"),
-       url("/fonts/Avenir Book.woff") format("woff");
+    url("/fonts/Avenir Book.woff") format("woff");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Avenir";
   src: url("/fonts/Avenir Light.woff2") format("woff2"),
-       url("/fonts/Avenir Light.woff") format("woff");
+    url("/fonts/Avenir Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Avenir";
   src: url("/fonts/Avenir Regular.woff2") format("woff2"),
-       url("/fonts/Avenir Regular.woff") format("woff");
+    url("/fonts/Avenir Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -76,6 +78,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
 .container {
   @apply px-[15px] mx-auto;
 
@@ -83,7 +86,8 @@ body {
 
 /* Base: light text (over dark background) */
 .light-mode .header-icon {
-  filter: brightness(0) invert(1); /* turns dark SVGs white */
+  filter: brightness(0) invert(1);
+  /* turns dark SVGs white */
   transition: filter 0.4s ease;
 }
 
@@ -102,4 +106,25 @@ body {
 .dark-mode svg {
   color: black;
   transition: color 0.4s ease;
+}
+
+/* featured property pagination */
+.custom-pagination-featured {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.custom-pagination-featured .swiper-pagination-bullet {
+  width: 8px;
+  height: 3px;
+  border-radius: 50px;
+  opacity: 1;
+  background: rgba(255, 255, 255, 1);
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.custom-pagination-featured .swiper-pagination-bullet-active {
+  width: 40px;
 }
