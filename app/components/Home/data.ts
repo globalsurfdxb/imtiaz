@@ -16,7 +16,7 @@ export const featuredProperties: Property[] = [
     logo: "/images/home/feat-property/logo1.svg",
     features: [
       {
-        icon: "/images/home/feat-property/icons/sofa.svg",
+        icon: "/images/home/feat-property/icons/1.svg",
         label: "Fully Furnished",
       },
       {
