@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image"; 
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -43,12 +42,12 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-end">
           {/* Active Property Info */}
-          <div className="mb-10 flex justify-between items-end container">
+          <div className="mb-5 flex justify-between items-end container">
             <div className="flex flex-col">
-              <h2 className="font-[avenir] text-[50px] font-[400] text-white uppercase leading-[100%] mb-[30px]">
+              <h2 className="font-[avenir] text-[50px] font-[400] text-white uppercase leading-[100%] mb-6">
                 {properties[activeIndex].name}
               </h2>
-              <p className="font-[avenir] text-[24px] font-[350] text-white/80 mb-[20px]">
+              <p className="font-[avenir] text-[24px] font-[350] text-white/80 leading-[1] ">
                 {properties[activeIndex].location}
               </p>
             </div>
@@ -60,7 +59,8 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
           </div>
 
           {/* Thumbnails Slider */}
-          <div className="relative max-w-screen w-full bg-white/24 backdrop-blur-[33px] py-[20px]">
+          <div className="relative max-w-screen w-full bg-white/24 backdrop-blur-[33px] py-[20px] ">
+          <div className="container">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               onSwiper={setMainSwiper}
@@ -70,13 +70,13 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                 prevEl: ".properties-prev",
               }}
               pagination={{
-                el: ".properties-pagination",
+                el: ".properties-pagination ",
                 clickable: true,
               }}
-              autoplay={{
-                delay: 2000,
-                disableOnInteraction: false,
-              }}
+              // autoplay={{
+              //   delay: 2000,
+              //   disableOnInteraction: false,
+              // }}
               loop
               slidesPerView={1.5}
               spaceBetween={56}
@@ -95,12 +95,11 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                   spaceBetween: 56,
                 },
               }}
-              className="properties-swiper container"
+              className="properties-swiper "
             >
               {properties.map((property, index) => (
                 <SwiperSlide key={property.id}>
-                  <div
-                    className={`relative w-full lg:w-[311px] h-[171px] rounded-[7px] overflow-hidden group ${
+                  <div className={`relative w-full   h-[171px] rounded-[7px] overflow-hidden group ${
                       index === activeIndex ? "border-2 border-white" : ""
                     }`}
                     onClick={() => {
@@ -114,7 +113,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                       alt={property.name}
                       width={311}
                       height={171}
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                     />
                     <div
                       className="absolute inset-0"
@@ -161,17 +160,31 @@ linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
                 </SwiperSlide>
               ))}
             </Swiper>
+            </div>
             <div className="properties-pagination mt-[20px]"></div>
           </div>
         </div>
 
         {/* Navigation Buttons - On main background */}
         <div className="container absolute top-[337px] inset-0 flex justify-between w-full">
-          <button className="properties-prev z-20 w-[50px] h-[50px] md:w-[70px] md:h-[70px] bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
-            <ChevronLeft size={32} />
+          <button className="properties-prev z-20 w-[50px] h-[50px] md:w-[70px] cursor-pointer md:h-[70px] group bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
+            <Image
+                                     src="/images/icons/arrow-right.svg"
+                                     alt="arrow-right"
+                                     width={28}
+                                     height={28}
+                                     className="w-[28px] h-[28px] rotate-180  invert brightness-1 group-hover:brightness-[1] group-hover:invert-[0] "
+                                   />
           </button>
-          <button className="properties-next z-20 w-[50px] h-[50px] md:w-[70px] md:h-[70px] bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
-            <ChevronRight size={32} />
+          <button className="properties-next z-20 w-[50px] h-[50px] md:w-[70px] cursor-pointer md:h-[70px] group bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
+           
+                                   <Image
+                                     src="/images/icons/arrow-right.svg"
+                                     alt="arrow-right"
+                                     width={28}
+                                     height={28}
+                                     className="w-[28px] h-[28px] invert brightness-0 group-hover:brightness-[1] group-hover:invert-[0] "
+                                   />
           </button>
         </div>
       </div>

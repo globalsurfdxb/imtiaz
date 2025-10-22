@@ -9,8 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   useEffect(() => {
 ScrollTrigger.create({
-  trigger: sectionRef.current,
-  start: "top top",
+  trigger: contentRef.current,
+  start: "bottom top",
   end: "bottom top",
   scrub: true,
   onUpdate: (self) => {
