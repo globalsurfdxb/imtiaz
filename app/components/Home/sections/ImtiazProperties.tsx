@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowBigDown } from "lucide-react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -70,7 +70,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                 prevEl: ".properties-prev",
               }}
               pagination={{
-                el: ".properties-pagination ",
+                el: ".properties-pagination",
                 clickable: true,
               }}
               autoplay={{
@@ -100,7 +100,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
               {properties.map((property, index) => (
                 <SwiperSlide key={property.id}>
                   <div
-                    className={`relative w-full lg:w-[311px] h-[171px] rounded-[7px] overflow-hidden group${
+                    className={`relative w-full lg:w-[311px] h-[171px] rounded-[7px] overflow-hidden group ${
                       index === activeIndex ? "border-2 border-white" : ""
                     }`}
                     onClick={() => {
