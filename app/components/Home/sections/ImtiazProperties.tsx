@@ -34,9 +34,8 @@ const ImtiazProperties = () => {
           <div
             className="absolute inset-0"
             style={{
-              background: `
-              linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%)
-            `,
+              background: `linear-gradient(271.91deg, rgba(0, 0, 0, 0) 56.1%, rgba(0, 0, 0, 0.7) 97.75%),
+linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
             }}
           />
         </div>
@@ -117,10 +116,27 @@ const ImtiazProperties = () => {
                       height={171}
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div
+                      className="absolute inset-0"
+                      style={
+                        index === activeIndex
+                          ? {
+                              background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 47.37%, #000000 126.02%),
+linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
+
+                          `,
+                            }
+                          : {
+                              background: `
+            linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+          `,
+                            }
+                      }
+                    />
 
                     <div className="absolute top-5 left-5">
-                      <span className="font-[avenir] text-[20px] font-[350] text-white leading-[110%]">
+                      <span className="font-[avenir] text-[20px] font-[350] text-white leading-[110%] tracking-wider">
                         {property.number}
                       </span>
                     </div>
