@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { pressSpotlights } from "../data";
+import { ArrowUpRight } from "lucide-react";
 
 const PressSpotlights = () => {
   return (
@@ -45,17 +46,43 @@ const PressSpotlights = () => {
           >
             {pressSpotlights.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="overflow-hidden cursor-pointer">
-                  <div className=" relative">
+                <div className="overflow-hidden cursor-pointer group">
+                  {/* IMAGE CONTAINER */}
+                  <div className="relative w-full h-[380px] overflow-hidden group">
+                    {/* IMAGE */}
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={380}
-                      height={380}
-                      className="object-cover w-full h-full"
+                      fill
+                      className="object-cover w-full h-full transition-all duration-300"
                     />
+
+                    {/* GRADIENT OVERLAY */}
+                    <div
+                      style={{
+                        background:
+                          "linear-gradient(180.2deg, rgba(0, 0, 0, 0) 50.13%, rgba(0, 0, 0, 0.5) 99.82%)",
+                      }}
+                      className="absolute inset-0 z-10"
+                    />
+
+                    {/* BACKDROP BLUR ON HOVER */}
+                    <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-[12px]" />
+
+                    {/* CENTERED ICON ON HOVER */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-30 transition-opacity duration-300">
+                      <div className="w-[60px] h-[60px] bg-white backdrop-blur-md rounded-full flex items-center justify-center">
+                        <Image
+                          src="/icons/arrow-right-top-primary.svg"
+                          alt="Arrow"
+                          width={18}
+                          height={20}
+                        />
+                      </div>
+                    </div>
                   </div>
 
+                  {/* TEXT CONTENT */}
                   <div className="pt-[24px]">
                     <p className="text-[17px] text-black/80 font-[400] font-[avenir] mb-[15px] leading-[110%] capitalize tracking-wide">
                       {item.category}
