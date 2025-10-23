@@ -110,10 +110,10 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                 {properties.map((property, index) => (
                   <SwiperSlide key={property.id}>
                     <div
-                      className={`relative w-full cursor-pointer h-[171px] rounded-[7px] overflow-hidden group ${
+                      className={`relative w-full cursor-pointer h-[171px] rounded-[7px] overflow-hidden group border-2 ${
                         index === activeIndex
-                          ? "border-2 border-white"
-                          : ""
+                          ? "border-white"
+                          : "border-transparent"
                       }`}
                       onClick={() => {
                         if (mainSwiper) {
@@ -126,7 +126,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
                         alt={property.name}
                         width={311}
                         height={171}
-                        className="object-cover w-full h-full group-hover:scale-110 transition-all duration-300"
+                        className="object-cover w-full h-full group-hover:scale-110 transition-all duration-500"
                       />
                       <div
                         className="absolute inset-0"
