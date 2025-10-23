@@ -23,7 +23,7 @@ const ImtiazApp = () => {
                 <a
                   href="#"
                   aria-label="Download on App Store"
-                  className="bg-black rounded-[11px] h-[65px] w-[194px]"
+                  className="bg-black rounded-[11px] h-[65px] w-[194px] hover:translate-y-[-3px] transition-all duration-300"
                 >
                   <Image
                     src="/images/icons/appstore.svg"
@@ -36,7 +36,7 @@ const ImtiazApp = () => {
                 <a
                   href="#"
                   aria-label="Get it on Google Play"
-                  className="bg-black rounded-[11px] h-[65px] w-[194px]"
+                  className="bg-black rounded-[11px] h-[65px] w-[194px] hover:translate-y-[-3px] transition-all duration-300"
                 >
                   <Image
                     src="/images/icons/playstore.svg"

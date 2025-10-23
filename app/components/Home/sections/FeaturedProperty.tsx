@@ -8,15 +8,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const FeaturedProperty = () => {
   const [showPagination, setShowPagination] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPagination(true);
-    }, 1000); // 2 seconds
+    }, 1000);
 
-    return () => clearTimeout(timer); // cleanup on unmount
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -46,7 +47,14 @@ const FeaturedProperty = () => {
             >
               {featuredProperties.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <div className="relative w-full flex flex-col items-center">
+                  <motion.div
+                    key={item.id}
+                    className="relative w-full flex flex-col items-center"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                  >
                     {/* IMAGE */}
                     <div className="relative w-full mx-auto">
                       <div className="md:h-[650px] 2xl:h-[860px] max-w-[1920px] max-h-[860px]">
@@ -163,7 +171,7 @@ const FeaturedProperty = () => {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>

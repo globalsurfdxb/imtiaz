@@ -59,7 +59,7 @@ const CoastalParadise = () => {
               fast-growing location is set to become the premier entertainment,
               dining and leisure destination.
             </p>
-            <button className="border leading-[1.444444444444444] border-primary text-primary p-[15px] rounded-[169px] text-[18px] font-[avenir] font-[400] hover:bg-primary hover:text-white transition w-fit">
+            <button className="border cursor-pointer leading-[1.444444444444444] border-primary text-primary p-[15px] rounded-[169px] text-[18px] font-[avenir] font-[400] hover:bg-primary hover:text-white transition w-fit">
               LEARN MORE
             </button>
           </div>

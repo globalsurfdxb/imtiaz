@@ -13,7 +13,7 @@ const Footer = () => {
     console.log("Newsletter email:", email);
     setEmail("");
   };
- const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
   useEffect(() => {
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
 
           <div className="w-fit">
-            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
+            <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase mb-10 underline underline-offset-[10px] decoration-1">
               Help & Support
             </h3>
             <ul className="space-y-[30px] mb-[70px]">
@@ -161,26 +161,25 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="flex gap-4 mb-[30px]">
-  {footerData.socialMedia.map((social, index) => (
-    <a
-      key={index}
-      href={social.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={social.name}
-      className="transition-all duration-500 hover:brightness-0 hover:invert-1 hover:sepia  "
-    >
-      <Image
-        src={social.icon}
-        alt={social.name}
-        width={24}
-        height={24}
-        className="h-[24px] w-auto"
-      />
-    </a>
-  ))}
-</div>
-
+              {footerData.socialMedia.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="transition-all duration-500 hover:brightness-0 hover:invert-1 hover:sepia  "
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    width={24}
+                    height={24}
+                    className="h-[24px] w-auto"
+                  />
+                </a>
+              ))}
+            </div>
 
             {/* App Store Buttons */}
             <div className="flex gap-[25px]">
@@ -202,46 +201,46 @@ const Footer = () => {
                   className=" w-auto"
                 />
               </div>
-               
             </div>
           </div>
         </div>
-         
       </div>
- <div className="container relative">
-  <div
-      onClick={scrollToTop}
-      className={`fixed bottom-[90px] right-10 2xl:right-15 z-[9999] flex justify-center items-center 
+      <div className="container relative">
+        <div
+          onClick={scrollToTop}
+          className={`fixed bottom-[90px] right-10 2xl:right-15 z-[9999] flex justify-center items-center 
       w-[74px] h-[74px] rounded-full bg-[#D9D9D936] cursor-pointer transition-all duration-500 
-      hover:bg-[#b25b73] ${isVisible ? "opacity-100 visible" : "opacity-0 invisible"}`}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="25"
-        height="24"
-        viewBox="0 0 25 24"
-        fill="none"
-        className="transition-transform duration-500 group-hover:-translate-y-1"
-      >
-        <path
-          d="M5.93359 9.57031L12.0065 3.50031L18.0793 9.57031"
-          stroke="white"
-          strokeWidth="2"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M12.0059 20.5L12.0059 3.67"
-          stroke="white"
-          strokeWidth="2"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
- </div>
+      hover:bg-[#b25b73] ${
+        isVisible ? "opacity-100 visible" : "opacity-0 invisible"
+      }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+            className="transition-transform duration-500 group-hover:-translate-y-1"
+          >
+            <path
+              d="M5.93359 9.57031L12.0065 3.50031L18.0793 9.57031"
+              stroke="white"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M12.0059 20.5L12.0059 3.67"
+              stroke="white"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
       {/* Copyright */}
       <div className="mt-[55px] bg-[#893F51]">
         <div className="py-[25px]">
