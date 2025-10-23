@@ -1,8 +1,8 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import Image from "next/image"; 
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -19,18 +19,18 @@ const PressSpotlights = () => {
         <div className="relative flex items-center justify-center">
           {/* Prev Button */}
           <button className="press-prev flex-shrink-0 -mt-30 z-10 w-[80px] h-[80px] group cursor-pointer bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-300 mr-[14px]">
-          <Image
-                                    src="/images/icons/arrow-right.svg"
-                                    alt="arrow-right"
-                                    width={32}
-                                    height={32}
-                                    className="w-[32px] h-[32px] rotate-180   brightness-[1]  invert-[0] group-hover:invert group-hover:brightness-1 "
-                                  />
+            <Image
+              src="/images/icons/arrow-right.svg"
+              alt="arrow-right"
+              width={32}
+              height={32}
+              className="w-[32px] h-[32px] rotate-180   brightness-[1]  invert-[0] group-hover:invert group-hover:brightness-1 "
+            />
           </button>
 
           {/* Swiper */}
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
             navigation={{
               nextEl: ".press-next",
               prevEl: ".press-prev",
@@ -45,6 +45,9 @@ const PressSpotlights = () => {
               640: { slidesPerView: 2, spaceBetween: 22 },
               1024: { slidesPerView: 3, spaceBetween: 22 },
               1280: { slidesPerView: 4, spaceBetween: 22 },
+            }}
+            autoplay={{
+              delay: 3000,
             }}
             className="relative"
           >
@@ -102,13 +105,13 @@ const PressSpotlights = () => {
 
           {/* Next Button */}
           <button className="press-next -mt-30 flex-shrink-0 z-10 w-[80px] h-[80px] group cursor-pointer bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-300 ml-[14px]">
-           <Image
-                                     src="/images/icons/arrow-right.svg"
-                                     alt="arrow-right"
-                                     width={32}
-                                     height={32}
-                                     className="w-[32px] h-[32px] brightness-[1] invert-[0]  group-hover:invert group-hover:brightness-0 "
-                                   />
+            <Image
+              src="/images/icons/arrow-right.svg"
+              alt="arrow-right"
+              width={32}
+              height={32}
+              className="w-[32px] h-[32px] brightness-[1] invert-[0]  group-hover:invert group-hover:brightness-0 "
+            />
           </button>
         </div>
 
