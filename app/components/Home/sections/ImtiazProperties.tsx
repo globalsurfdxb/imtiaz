@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { properties } from "../data";
+import { motion } from "framer-motion";
 
 const ImtiazProperties = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -22,7 +23,16 @@ const ImtiazProperties = () => {
         </h1>
       </div>
       <div className="relative w-full h-screen overflow-hidden">
-        <div className="absolute inset-0 transition-opacity duration-700">
+        <motion.div
+          key={properties[activeIndex].id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+          className="absolute inset-0 will-change-[opacity]"
+        >
           <Image
             src={properties[activeIndex].image}
             alt={properties[activeIndex].name}
@@ -37,7 +47,7 @@ const ImtiazProperties = () => {
 linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
             }}
           />
-        </div>
+        </motion.div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-end">
