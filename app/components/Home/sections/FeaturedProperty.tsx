@@ -23,7 +23,9 @@ const FeaturedProperty = () => {
 
   return (
     <section className=" bg-white overflow-hidden">
-      <div className="container border-t border-black/20"></div>
+      <div className="container ">
+      <div className="border-t border-black/20"></div>
+      </div>
       <div className="pb-[75px] pt-[150px]">
         <div className="relative w-full">
           <h2 className="text-center font-[optima] text-[50px] font-[400] text-primary uppercase pb-[64px] leading-[1.2]">
