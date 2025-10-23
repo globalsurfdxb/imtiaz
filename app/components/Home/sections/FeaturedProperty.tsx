@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const FeaturedProperty = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
   const [showPagination, setShowPagination] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,15 +45,14 @@ const FeaturedProperty = () => {
               autoplay={{ delay: 4000 }}
               loop
               className="relative"
+              onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
             >
-              {featuredProperties.map((item) => (
+              {featuredProperties.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <motion.div
-                    key={item.id}
                     className="relative w-full flex flex-col items-center"
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: activeSlide === index ? 1 : 0 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
                   >
                     {/* IMAGE */}
