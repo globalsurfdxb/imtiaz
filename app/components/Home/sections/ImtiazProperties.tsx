@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Image from "next/image"; 
+import Image from "next/image";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -52,7 +52,7 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
               </p>
             </div>
             <div className="flex justify-center w-fit h-fit">
-              <button className="p-[15px] border border-white text-white hover:bg-white hover:text-[#7C2E2E] text-[14px] font-[avenir] uppercase tracking-wider rounded-full transition-all duration-300">
+              <button className="p-[15px] border border-white text-white cursor-pointer hover:bg-white hover:text-[#7C2E2E] text-[14px] font-[avenir] uppercase tracking-wider rounded-full transition-all duration-300">
                 VIEW ALL PROPERTIES
               </button>
             </div>
@@ -60,106 +60,107 @@ linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
 
           {/* Thumbnails Slider */}
           <div className="relative max-w-screen w-full bg-white/24 backdrop-blur-[33px] py-[20px] ">
-          <div className="container">
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              onSwiper={setMainSwiper}
-              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-              navigation={{
-                nextEl: ".properties-next",
-                prevEl: ".properties-prev",
-              }}
-              pagination={{
-                el: ".properties-pagination ",
-                clickable: true,
-              }}
-              // autoplay={{
-              //   delay: 2000,
-              //   disableOnInteraction: false,
-              // }}
-              loop
-              slidesPerView={1.5}
-              spaceBetween={56}
-              centeredSlides={false}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2.5,
-                  spaceBetween: 56,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 56,
-                },
-                1280: {
-                  slidesPerView: 5,
-                  spaceBetween: 56,
-                },
-              }}
-              className="properties-swiper "
-            >
-              {properties.map((property, index) => (
-                <SwiperSlide key={property.id}>
-                  <div className={`relative w-full   h-[171px] rounded-[7px] overflow-hidden group ${
-                      index === activeIndex ? "border-2 border-white" : ""
-                    }`}
-                    onClick={() => {
-                      if (mainSwiper) {
-                        mainSwiper.slideToLoop(index);
-                      }
-                    }}
-                  >
-                    <Image
-                      src={property.thumbnail}
-                      alt={property.name}
-                      width={311}
-                      height={171}
-                      className="object-cover w-full h-full"
-                    />
+            <div className="container">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                onSwiper={setMainSwiper}
+                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                navigation={{
+                  nextEl: ".properties-next",
+                  prevEl: ".properties-prev",
+                }}
+                pagination={{
+                  el: ".properties-pagination ",
+                  clickable: true,
+                }}
+                // autoplay={{
+                //   delay: 2000,
+                //   disableOnInteraction: false,
+                // }}
+                loop
+                slidesPerView={1.5}
+                spaceBetween={56}
+                centeredSlides={false}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 56,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 56,
+                  },
+                  1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 56,
+                  },
+                }}
+                className="properties-swiper "
+              >
+                {properties.map((property, index) => (
+                  <SwiperSlide key={property.id}>
                     <div
-                      className="absolute inset-0"
-                      style={
-                        index === activeIndex
-                          ? {
-                              background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 47.37%, #000000 126.02%),
+                      className={`relative w-full cursor-pointer h-[171px] rounded-[7px] overflow-hidden group ${
+                        index === activeIndex ? "border-2 border-white" : ""
+                      }`}
+                      onClick={() => {
+                        if (mainSwiper) {
+                          mainSwiper.slideToLoop(index);
+                        }
+                      }}
+                    >
+                      <Image
+                        src={property.thumbnail}
+                        alt={property.name}
+                        width={311}
+                        height={171}
+                        className="object-cover w-full h-full"
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={
+                          index === activeIndex
+                            ? {
+                                background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 47.37%, #000000 126.02%),
 linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
 
                           `,
-                            }
-                          : {
-                              background: `
+                              }
+                            : {
+                                background: `
             linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
             linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
           `,
-                            }
-                      }
-                    />
+                              }
+                        }
+                      />
 
-                    <div className="absolute top-5 left-5">
-                      <span className="font-[avenir] text-[20px] font-[350] text-white leading-[110%] tracking-wider">
-                        {property.number}
-                      </span>
-                    </div>
+                      <div className="absolute top-5 left-5">
+                        <span className="font-[avenir] text-[20px] font-[350] text-white leading-[110%] tracking-wider">
+                          {property.number}
+                        </span>
+                      </div>
 
-                    <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <div className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center">
-                        <Image
-                          src="/icons/arrow-right-top-primary.svg"
-                          alt="arrow-up-right"
-                          width={13}
-                          height={15}
-                        />
+                      <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center">
+                          <Image
+                            src="/icons/arrow-right-top-primary.svg"
+                            alt="arrow-up-right"
+                            width={13}
+                            height={15}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="absolute bottom-5 left-5 right-5">
+                        <h3 className="font-[avenir] text-[20px] font-[350] text-white uppercase leading-[110%]">
+                          {property.name}
+                        </h3>
                       </div>
                     </div>
-
-                    <div className="absolute bottom-5 left-5 right-5">
-                      <h3 className="font-[avenir] text-[20px] font-[350] text-white uppercase leading-[110%]">
-                        {property.name}
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
             <div className="properties-pagination mt-[20px]"></div>
           </div>
@@ -169,22 +170,21 @@ linear-gradient(344.37deg, rgba(0, 0, 0, 0) 69.75%, #000000 115.36%)
         <div className="container absolute top-[337px] inset-0 flex justify-between w-full">
           <button className="properties-prev z-20 w-[50px] h-[50px] md:w-[70px] cursor-pointer md:h-[70px] group bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
             <Image
-                                     src="/images/icons/arrow-right.svg"
-                                     alt="arrow-right"
-                                     width={28}
-                                     height={28}
-                                     className="w-[28px] h-[28px] rotate-180  invert brightness-1 group-hover:brightness-[1] group-hover:invert-[0] "
-                                   />
+              src="/images/icons/arrow-right.svg"
+              alt="arrow-right"
+              width={28}
+              height={28}
+              className="w-[28px] h-[28px] rotate-180  invert brightness-1 group-hover:brightness-[1] group-hover:invert-[0] "
+            />
           </button>
           <button className="properties-next z-20 w-[50px] h-[50px] md:w-[70px] cursor-pointer md:h-[70px] group bg-transparent border border-white hover:bg-white text-white hover:text-[#7C2E2E] rounded-full flex items-center justify-center transition-all duration-300">
-           
-                                   <Image
-                                     src="/images/icons/arrow-right.svg"
-                                     alt="arrow-right"
-                                     width={28}
-                                     height={28}
-                                     className="w-[28px] h-[28px] invert brightness-0 group-hover:brightness-[1] group-hover:invert-[0] "
-                                   />
+            <Image
+              src="/images/icons/arrow-right.svg"
+              alt="arrow-right"
+              width={28}
+              height={28}
+              className="w-[28px] h-[28px] invert brightness-0 group-hover:brightness-[1] group-hover:invert-[0] "
+            />
           </button>
         </div>
       </div>
