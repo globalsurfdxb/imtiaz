@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { properties } from "../data";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ImtiazProperties = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,31 +23,51 @@ const ImtiazProperties = () => {
         </h1>
       </div>
       <div className="relative w-full h-screen overflow-hidden">
-        <motion.div
-          key={properties[activeIndex].id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.25, 0.1, 0.25, 1],
-          }}
-          className="absolute inset-0 will-change-[opacity]"
-        >
-          <Image
-            src={properties[activeIndex].image}
-            alt={properties[activeIndex].name}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(271.91deg, rgba(0, 0, 0, 0) 56.1%, rgba(0, 0, 0, 0.7) 97.75%),
-linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
-            }}
-          />
-        </motion.div>
+        <div className="absolute inset-0 overflow-hidden">
+          <AnimatePresence initial={false} mode="sync">
+            <motion.div
+              key={activeIndex}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{
+                duration: 0.8,
+                ease: [0.45, 0, 0.55, 1],
+              }}
+              className="absolute inset-0 will-change-transform z-0"
+            >
+              <Image
+                src={properties[activeIndex].image}
+                alt={properties[activeIndex].name}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(271.91deg, rgba(0, 0, 0, 0) 56.1%, rgba(0, 0, 0, 0.7) 97.75%),
+                       linear-gradient(178.27deg, rgba(0, 0, 0, 0) 52.23%, #000000 107.15%)`,
+                }}
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Keep previous image underneath to prevent flash */}
+          {/* <div className="absolute inset-0 -z-10">
+            <Image
+              src={
+                properties[
+                  activeIndex === 0 ? properties.length - 1 : activeIndex - 1
+                ].image
+              }
+              alt="previous"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div> */}
+        </div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-end">
