@@ -23,15 +23,15 @@ const FeaturedProperty = () => {
 
   return (
     <section className=" bg-white overflow-hidden">
-      <div className="container ">
+    {/*   <div className="container ">
       <div className="border-t border-black/20"></div>
-      </div>
-      <div className="pb-[75px] pt-[150px]">
+      </div> */}
+      <div className="pb-[75px]">
         <div className="relative w-full">
-          <h2 className="text-center font-[optima] text-[50px] font-[400] text-primary uppercase pb-[64px] leading-[1.2]">
+   {/*        <h2 className="text-center font-[optima] text-[50px] font-[400] text-primary uppercase pb-[64px] leading-[1.2]">
             Featured Property
           </h2>
-
+ */}
           {/* Relative container for Swiper + pagination */}
           <div className="relative w-full">
             <Swiper

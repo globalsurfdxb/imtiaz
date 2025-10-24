@@ -70,7 +70,7 @@ ScrollTrigger.create({
             duration: 1.2,
             ease: "power2.out",
           },
-          "-=0.8"
+          "-=1"
         )
         .to(
           contentRef.current,
@@ -80,7 +80,7 @@ ScrollTrigger.create({
             duration: 1.2,
             ease: "power3.out",
           },
-          "-=0.5"
+          "-=0.8"
         );
     }, sectionRef);
 

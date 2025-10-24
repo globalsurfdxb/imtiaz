@@ -66,8 +66,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Avenir", "Optima", system-ui, sans-serif;
-  --font-heading: "Optima", "Avenir", sans-serif;
+  --font-sans: "Avenir", system-ui, sans-serif;
+  --font-heading: "Optima", sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-primary: var(--primary);
   --breakpoint-3xl: 113.125rem;
@@ -107,7 +107,7 @@ body {
 }
 
 /* Optional: Text color for lucide icons */
-.light-mode svg {
+/* .light-mode svg {
   color: white;
   transition: color 0.4s ease;
 }
@@ -116,7 +116,7 @@ body {
   color: black;
   transition: color 0.4s ease;
 }
-
+ */
 /* featured property pagination */
 .custom-pagination-featured {
   display: flex;

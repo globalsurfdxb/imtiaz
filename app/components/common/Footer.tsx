@@ -41,7 +41,7 @@ const Footer = () => {
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-[40px] underline underline-offset-[10px] decoration-1">
               ABOUT IMTIAZ
             </h3>
-            <ul className="space-y-[30px] mb-[70px]">
+            <ul className="space-y-[15px] mb-[70px]">
               {footerData.aboutImtiaz.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -58,7 +58,7 @@ const Footer = () => {
               <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 POPULAR AREAS
               </h3>
-              <ul className="space-y-[30px]">
+              <ul className="space-y-[15px]">
                 {footerData.popularAreas.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -77,7 +77,7 @@ const Footer = () => {
             <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase mb-10 underline underline-offset-[10px] decoration-1">
               Help & Support
             </h3>
-            <ul className="space-y-[30px] mb-[70px]">
+            <ul className="space-y-[15px] mb-[70px]">
               {footerData.helpSupport.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -94,7 +94,7 @@ const Footer = () => {
               <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 Media Center
               </h3>
-              <ul className="space-y-[30px]">
+              <ul className="space-y-[15px]">
                 {footerData.mediaCenter.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -114,7 +114,7 @@ const Footer = () => {
               <h3 className="font-[optima] font-[550] leading-[100%] text-[24px] uppercase tracking-wider mb-10 underline underline-offset-[10px] decoration-1">
                 Trending Searches
               </h3>
-              <ul className="space-y-[30px]">
+              <ul className="space-y-[15px]">
                 {footerData.trendingSearches.map((item, index) => (
                   <li key={index}>
                     <Link
