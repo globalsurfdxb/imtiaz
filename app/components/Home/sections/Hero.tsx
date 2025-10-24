@@ -52,6 +52,13 @@ ScrollTrigger.create({
       // Sequence
       tl.to(logoRef.current, {
         opacity: 0.7,
+        y: 200,
+        scale: 0.7,
+        duration: 1,
+        ease: "power3.out",
+      })
+      tl.to(logoRef.current, {
+        opacity: 0.7,
         y: 0,
         scale: 1,
         duration: 1,
@@ -59,8 +66,15 @@ ScrollTrigger.create({
       })
       .to(logoRef.current, {
         scale: 1.5,
+        opacity: 0.7,
+        duration: 1,
+        ease: "power3.out",
+      })
+      .to(logoRef.current, {
+        scale: 8,
         opacity: 0,
-        duration: 1.3,
+        duration: 2.5,
+         y: -1200,
         ease: "power3.out",
       })
         .to(
@@ -70,7 +84,7 @@ ScrollTrigger.create({
             duration: 1.2,
             ease: "power2.out",
           },
-          "-=1"
+          "-=2.2"
         )
         .to(
           contentRef.current,
@@ -116,7 +130,7 @@ ScrollTrigger.create({
         className="lgoicon absolute inset-0 flex items-center justify-center opacity-0 "
       >
         <Image
-          src="/images/M Logo-01.png"
+          src="/images/m-logo.svg"
           alt="logo-icon"
           width={1500}
           height={1500}

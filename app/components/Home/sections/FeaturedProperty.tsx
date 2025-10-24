@@ -145,7 +145,8 @@ const FeaturedProperty = () => {
                         </div>
                         <div className="w-[1px] bg-black/20  " />
                         <div className="flex flex-col justify-between py-3">
-                          <h3 className="text-primary text-[32px] font-[optima] uppercase mb-6 leading-[1]">
+                          <h2 className="uppercase font-[avenir] text-[20px] font-[200] mb-5">featured Properties</h2>
+                          <h3 className="text-primary text-[32px] font-[optima] uppercase mb-3 leading-[1]">
                             {item.name}
                           </h3>
                           <p className="text-black/80 text-[20px] font-[avenir]">
